@@ -1,3 +1,5 @@
+require "user.reiend.colorschemes"
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -13,8 +15,26 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  -- colorschemes
+  {
+    "sainnhe/everforest",
+     lazy = false, -- make sure we load this during startup if it is your main colorscheme
+      priority = 1000, -- make sure to load this before all the other start plugins
+      config = function()
+      -- load the colorscheme here
+      setColorSchemeEverforest()
+    end,
+  },
 	"nordtheme/vim",
+
+  -- quality of life
 	"nvim-lualine/lualine.nvim",
+
+  -- highlighting
 	"nvim-treesitter/nvim-treesitter",
-	"sainnhe/everforest"
+
+  -- lsp
+  "williamboman/mason.nvim",
+  "williamboman/mason-lspconfig.nvim",
+  "neovim/nvim-lspconfig",
 })
