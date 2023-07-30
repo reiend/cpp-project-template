@@ -18,22 +18,22 @@ require("lazy").setup({
   -- colorschemes
   {
     "sainnhe/everforest",
-     lazy = false, -- make sure we load this during startup if it is your main colorscheme
-      priority = 1000, -- make sure to load this before all the other start plugins
-      config = function()
+    lazy = false,      -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000,   -- make sure to load this before all the other start plugins
+    config = function()
       -- load the colorscheme here
       setColorSchemeEverforest()
     end,
   },
-	"nordtheme/vim",
+  "nordtheme/vim",
 
   -- quality of life
-	"nvim-lualine/lualine.nvim",
+  "nvim-lualine/lualine.nvim",
   "numToStr/Comment.nvim",
   "JoosepAlviste/nvim-ts-context-commentstring",
 
   -- highlighting
-	"nvim-treesitter/nvim-treesitter",
+  "nvim-treesitter/nvim-treesitter",
 
   -- lsp
   "williamboman/mason.nvim",
@@ -42,7 +42,8 @@ require("lazy").setup({
 
   -- code completion
   {
-    'nvim-telescope/telescope.nvim', tag = '0.1.2',
-      dependencies = { 'nvim-lua/plenary.nvim' }
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.2',
+    dependencies = { 'nvim-lua/plenary.nvim' }
   }
 })
