@@ -108,4 +108,4 @@ keymap('n', '<leader>pf', function(_)
   vim.lsp.buf.format()
 end, { desc = '[P]roject [F]ormat' })
 
-vim.api.nvim_command("command! Format lua vim.lsp.buf.format()")
+-- vim.api.nvim_command("command! Format lua vim.lsp.buf.format()")

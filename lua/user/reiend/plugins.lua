@@ -74,6 +74,7 @@ require("lazy").setup({
   -- "dcampos/cmp-snippy"
 
   -- Git
-  "tpope/vim-fugitive"
+  "tpope/vim-fugitive",
 
+  "mhartington/formatter.nvim"
 })
