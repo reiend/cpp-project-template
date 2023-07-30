@@ -31,6 +31,8 @@ require("lazy").setup({
   "nvim-lualine/lualine.nvim",
   "numToStr/Comment.nvim",
   "JoosepAlviste/nvim-ts-context-commentstring",
+  "windwp/nvim-autopairs",
+  "windwp/nvim-ts-autotag",
 
   -- highlighting
   "nvim-treesitter/nvim-treesitter",
