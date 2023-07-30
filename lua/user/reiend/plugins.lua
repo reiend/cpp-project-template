@@ -18,8 +18,8 @@ require("lazy").setup({
   -- colorschemes
   {
     "sainnhe/everforest",
-    lazy = false,      -- make sure we load this during startup if it is your main colorscheme
-    priority = 1000,   -- make sure to load this before all the other start plugins
+    lazy = false,    -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
       -- load the colorscheme here
       setColorSchemeEverforest()
@@ -40,10 +40,38 @@ require("lazy").setup({
   "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",
 
-  -- code completion
+  -- searching
   {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.2',
     dependencies = { 'nvim-lua/plenary.nvim' }
-  }
+  },
+
+  -- code completion
+  "neovim/nvim-lspconfig",
+  "hrsh7th/cmp-nvim-lsp",
+  "hrsh7th/cmp-buffer",
+  "hrsh7th/cmp-path",
+  "hrsh7th/cmp-cmdline",
+  "hrsh7th/nvim-cmp",
+
+  -- For vsnip users.
+  -- "hrsh7th/cmp-vsnip",
+  -- "hrsh7th/vim-vsnip",
+
+  -- For luasnip users.
+  "L3MON4D3/LuaSnip",
+  "saadparwaiz1/cmp_luasnip",
+
+  -- For ultisnips users.
+  -- "SirVer/ultisnips',
+  -- "quangnguyen30192/cmp-nvim-ultisnips',
+
+  -- For snippy users.
+  -- "dcampos/nvim-snippy",
+  -- "dcampos/cmp-snippy"
+
+  -- Git
+  "tpope/vim-fugitive"
+
 })
