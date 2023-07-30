@@ -29,6 +29,8 @@ require("lazy").setup({
 
   -- quality of life
 	"nvim-lualine/lualine.nvim",
+  "numToStr/Comment.nvim",
+  "JoosepAlviste/nvim-ts-context-commentstring",
 
   -- highlighting
 	"nvim-treesitter/nvim-treesitter",
