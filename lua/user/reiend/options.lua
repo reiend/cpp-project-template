@@ -25,6 +25,7 @@ local options = {
   relativenumber = true,
   laststatus = 3,
   scrolloff = 8,
+  clipboard = "unnamedplus"
   -- colorcolumn = "80"
 }
 

@@ -1,18 +1,33 @@
-require("mason").setup()
-require("mason-lspconfig").setup()
+require('mason').setup()
+require('mason-lspconfig').setup()
 
 -- servers
-require "user.reiend.lsp.servers.lua_ls"
-require "user.reiend.lsp.servers.tsserver"
+require 'user.reiend.lsp.servers.lua_ls'
+require 'user.reiend.lsp.servers.tsserver'
 
+local efmls = require 'efmls-configs'
+efmls.init { -- Enable formatting provided by efm langserver
+  default_config = false,
+  init_options = { documentFormatting = true },
+  cmd = { 'efm-langserver.cmd' },
+}
 
-local lspconfig = require('lspconfig')
-lspconfig.pyright.setup {}
-lspconfig.tsserver.setup {}
-lspconfig.rust_analyzer.setup {
-  -- Server-specific settings. See `:help lspconfig-setup`
-  settings = {
-    ['rust-analyzer'] = {},
+efmls.setup {
+  javascript = {
+    linter = require 'efmls-configs.linters.eslint_d',
+    formatter = require 'efmls-configs.formatters.prettier_d',
+  },
+  typescript = {
+    linter = require 'efmls-configs.linters.eslint_d',
+    formatter = require 'efmls-configs.formatters.prettier_d',
+  },
+  typescriptreact = {
+    linter = require 'efmls-configs.linters.eslint_d',
+    formatter = require 'efmls-configs.formatters.prettier_d',
+  },
+  lua = {
+    linter = require 'efmls-configs.linters.luacheck',
+    formatter = require 'efmls-configs.formatters.stylua',
   },
 }
 
@@ -53,3 +68,4 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, opts)
   end,
 })
+

@@ -76,5 +76,11 @@ require("lazy").setup({
   -- Git
   "tpope/vim-fugitive",
 
-  "mhartington/formatter.nvim"
+  "mhartington/formatter.nvim",
+  "mfussenegger/nvim-lint",
+  {
+    'creativenull/efmls-configs-nvim',
+    tag = 'v0.1.3',
+    dependencies = { 'neovim/nvim-lspconfig' }
+  },
 })
