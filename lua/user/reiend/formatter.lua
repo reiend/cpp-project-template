@@ -1,8 +1,8 @@
 -- Utilities for creating configurations
-local util = require "formatter.util"
+local util = require 'formatter.util'
 
 -- Provides the Format, FormatWrite, FormatLock, and FormatWriteLock commands
-require("formatter").setup {
+require('formatter').setup {
   -- Enable or disable logging
   logging = true,
   -- Set the log level
@@ -44,11 +44,15 @@ require("formatter").setup {
     typescriptreact = {
       function()
         return {
-          exe = "prettierd",
-          args = { "--stdin-filepath", vim.api.nvim_buf_get_name(0), '--single-quote' },
-          stdin = true
+          exe = 'prettierd',
+          args = {
+            '--stdin-filepath',
+            vim.api.nvim_buf_get_name(0),
+            '--single-quote',
+          },
+          stdin = true,
         }
-      end
+      end,
     },
-  }
+  },
 }

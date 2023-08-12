@@ -1,7 +1,7 @@
 local options = {
-  fileencoding = "utf-8", -- type of encoded text written on a file.
-  cot = { "menuone", "noselect" }, -- options for completion ins-completion.
-  syntax = "on", -- enabled syntax highlighting.
+  fileencoding = 'utf-8', -- type of encoded text written on a file.
+  cot = { 'menuone', 'noselect' }, -- options for completion ins-completion.
+  syntax = 'on', -- enabled syntax highlighting.
   number = true, -- show line numbers.
   cursorline = true, -- highlight the current line number.
   ruler = true, -- cursoer position diagnostics.
@@ -25,7 +25,7 @@ local options = {
   relativenumber = true,
   laststatus = 3,
   scrolloff = 8,
-  clipboard = "unnamedplus"
+  clipboard = 'unnamedplus',
   -- colorcolumn = "80"
 }
 

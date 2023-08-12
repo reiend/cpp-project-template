@@ -1,5 +1,5 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 local keymap = vim.keymap.set
 
@@ -15,7 +15,6 @@ keymap('n', ']d', vim.diagnostic.goto_next)
 keymap('n', '<leader>e', vim.diagnostic.open_float)
 keymap('n', '<leader>q', vim.diagnostic.setloclist)
 
-
 -- window navigation
 keymap('n', '<C-h>', '<C-w>h', { desc = 'Move to left window' })
 keymap('n', '<C-l>', '<C-w>l', { desc = 'Move to right window' })
@@ -30,7 +29,6 @@ keymap('n', '<C-k>', '<C-w>k', { desc = 'Move to top window' })
 --   ':NvimTreeRefresh<CR>',
 --   { desc = 'Refresh file explorer' }
 -- )
-
 
 -- rezing windows
 keymap('n', '<A-k>', ':resize +6<CR>', { desc = 'resize window bottom' })

@@ -1,16 +1,9 @@
 require('lint').linters_by_ft = {
-  typescriptreact = { "eslint_d" }
+  lua = { 'luacheck' },
 }
 
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   callback = function()
-    require("lint").try_lint("eslint_d")
+    require("lint").try_lint("luacheck")
   end,
 })
-
-vim.api.nvim_create_autocmd({ "InsertLeave" }, {
-  callback = function()
-    require("lint").try_lint("eslint_d")
-  end,
-})
-

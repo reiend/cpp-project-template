@@ -9,4 +9,3 @@ require('lspconfig').tsserver.setup {
     'typescript.tsx',
   },
 }
-
