@@ -22,7 +22,7 @@ stylua = vim.tbl_extend('force', stylua, {
 local prettier_d = require 'efmls-configs.formatters.prettier_d'
 prettier_d = vim.tbl_extend('force', prettier_d, {
   prefix = 'prettier_d',
-  formatCommand = 'prettier_d ${INPUT}',
+  formatCommand = 'prettierd ${INPUT}',
   formatStdin = true,
 })
 
@@ -117,3 +117,4 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, opts)
   end,
 })
+
