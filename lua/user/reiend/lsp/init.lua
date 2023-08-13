@@ -4,6 +4,35 @@ require('mason-lspconfig').setup()
 -- servers
 require 'user.reiend.lsp.servers.lua_ls'
 require 'user.reiend.lsp.servers.tsserver'
+require('lspconfig').clangd.setup {
+  cmd = { 'clangd' },
+  filetypes = {
+    'c',
+    'cpp',
+    'objc',
+    'objcpp',
+    'cuda',
+    'proto',
+  },
+}
+
+require('lspconfig').cmake.setup {
+  cmd = { 'cmake-language-server' },
+  filetypes = {
+    'cmake',
+  },
+  init_options = {
+    buildDirectory = 'build',
+  },
+  require('lspconfig').util.root_pattern(
+    'CMakePresets.json',
+    'CTestConfig.cmake',
+    '.git',
+    'build',
+    'cmake'
+  ),
+  single_file_support = true
+}
 
 local efmls = require 'efmls-configs'
 
