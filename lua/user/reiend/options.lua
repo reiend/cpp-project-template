@@ -33,3 +33,4 @@ local options = {
 for key2, value2 in pairs(options) do
   vim.opt[key2] = value2
 end
+
