@@ -5,4 +5,3 @@ function setColorSchemeEverforest()
   vim.opt.background = 'dark'
   vim.cmd [[ colorscheme everforest ]]
 end
-
