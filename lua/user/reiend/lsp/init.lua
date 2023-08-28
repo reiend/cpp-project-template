@@ -4,8 +4,24 @@ require('mason-lspconfig').setup()
 -- servers
 require 'user.reiend.lsp.servers.lua_ls'
 require 'user.reiend.lsp.servers.tsserver'
+
+require('lspconfig').marksman.setup {
+  cmd = { 'marksman', 'server' },
+}
+
 require('lspconfig').clangd.setup {
-  cmd = { 'clangd' },
+  cmd = {
+    'clangd.exe',
+  },
+  root_dir = require('lspconfig').util.root_pattern(
+    '.clangd',
+    '.clang-tidy',
+    '.clang-format',
+    'compile_commands.json',
+    'compile_flags.txt',
+    'configure.ac',
+    '.git'
+  ),
   filetypes = {
     'c',
     'cpp',
@@ -31,7 +47,12 @@ require('lspconfig').cmake.setup {
     'build',
     'cmake'
   ),
-  single_file_support = true
+  single_file_support = true,
+}
+
+require('lspconfig').intelephense.setup {
+  cmd = { 'intelephense', '--stdio' },
+  filetypes = { 'php' },
 }
 
 local efmls = require 'efmls-configs'
@@ -73,6 +94,26 @@ eslint_d = vim.tbl_extend('force', eslint_d, {
   },
 })
 
+local clang_tidy = require 'efmls-configs.linters.clang_tidy'
+clang_tidy = vim.tbl_extend('force', clang_tidy, {
+  prefix = 'clang_tidy',
+  -- lintCommand = 'clang-tidy %s ${INPUT} -target x86_64-w64-mingw32',
+  lintCommand = 'clang-tidy -p build %s ${INPUT}',
+  lintStdin = false,
+  lintFormats = {
+    '%f:%l:%c: %trror: %m',
+    '%f:%l:%c: %tarning: %m',
+    '%f:%l:%c: %tote: %m',
+  },
+})
+
+local clang_format = require 'efmls-configs.formatters.clang_format'
+clang_format = vim.tbl_extend('force', clang_format, {
+  prefix = 'clang_format',
+  formatCommand = 'clang-format.exe %s ${INPUT}',
+  formatStdin = true,
+})
+
 local luacheck = require 'efmls-configs.linters.luacheck'
 luacheck = vim.tbl_extend('force', luacheck, {
   prefix = 'luacheck',
@@ -106,6 +147,10 @@ efmls.setup {
     -- formatter = require 'efmls-configs.formatters.stylua',
     linter = luacheck,
     formatter = stylua,
+  },
+  cpp = {
+    linter = clang_tidy,
+    -- formatter = clang_format,
   },
 }
 

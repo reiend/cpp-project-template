@@ -25,6 +25,7 @@ require('lazy').setup {
       setColorSchemeEverforest()
     end,
   },
+  'Mofiqul/vscode.nvim',
   'nordtheme/vim',
 
   -- quality of life
@@ -83,4 +84,6 @@ require('lazy').setup {
     tag = 'v0.1.3',
     dependencies = { 'neovim/nvim-lspconfig' },
   },
+  "andweeb/presence.nvim"
 }
+
