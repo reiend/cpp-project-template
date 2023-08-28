@@ -107,12 +107,12 @@ clang_tidy = vim.tbl_extend('force', clang_tidy, {
   },
 })
 
-local clang_format = require 'efmls-configs.formatters.clang_format'
-clang_format = vim.tbl_extend('force', clang_format, {
-  prefix = 'clang_format',
-  formatCommand = 'clang-format.exe %s ${INPUT}',
-  formatStdin = true,
-})
+-- local clang_format = require 'efmls-configs.formatters.clang_format'
+-- clang_format = vim.tbl_extend('force', clang_format, {
+--   prefix = 'clang_format',
+--   formatCommand = 'clang-format.exe %s ${INPUT}',
+--   formatStdin = true,
+-- })
 
 local luacheck = require 'efmls-configs.linters.luacheck'
 luacheck = vim.tbl_extend('force', luacheck, {

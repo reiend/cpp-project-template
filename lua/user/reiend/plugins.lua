@@ -84,6 +84,24 @@ require('lazy').setup {
     tag = 'v0.1.3',
     dependencies = { 'neovim/nvim-lspconfig' },
   },
-  "andweeb/presence.nvim"
+  'andweeb/presence.nvim',
+  'lukas-reineke/indent-blankline.nvim',
+  'lewis6991/gitsigns.nvim',
+  'akinsho/git-conflict.nvim',
+  -- "karb94/neoscroll.nvim"
+  -- {
+  --   'folke/trouble.nvim',
+  --   dependencies = { 'nvim-tree/nvim-web-devicons' },
+  --   opts = {
+  --     -- your configuration comes here
+  --     -- or leave it empty to use the default settings
+  --     -- refer to the configuration section below
+  --   },
+  -- },
+  {
+    'akinsho/bufferline.nvim',
+    version = '*',
+    -- dependencies = 'nvim-tree/nvim-web-devicons',
+  },
 }
 
